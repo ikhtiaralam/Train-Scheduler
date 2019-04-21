@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Train Scheduler</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+		
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <script src="https://use.fontawesome.com/8c1fdea402.js"></script>
+
+</head>
+<body>
+        <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h1 class="display-4">Train Scheduler</h1>
+                  <h4>Current Time: <span id="timer"></span></h4>
+                </div>
+              </div>
+	<div class="container px-0">
+		<div class="card mb-3">
+			<h5 class="card-header rounded-0 bg-primary text-white md-5">Current Train Schedule</h5>
+			<div class="card-body">
+			<table class="table table-hover" id="train-table">
+				<thead>
+					<tr>
+						<th scope="col">Delete</th>
+						<th scope="col">Train Name</th>
+						<th scope="col">Desitination</th>
+						<th scope="col">Frequency (min)</th>
+						<th scope="col">Next Arrival</th>
+						<th scope="col">Minutes Away</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>
+	<div class="container px-0">
+		<div class="card mb-3">
+			<h5 class="card-header  rounded-0 text-white bg-primary">Add New Train Information</h5>
+			<div class="card-body">
+				<form>
+					<div class="form-group">
+					<label for="trainname-input" class= "font-weight-bold">Train Name</label>
+					<input type="text" class="form-control" id="trainname-input" aria-describedby="emailHelp">
+					</div>
+					<div class="form-group">
+					<label for="destination-input" class= "font-weight-bold">Destination</label>
+					<input type="text" class="form-control" id="destination-input">
+					</div>
+					<div class="form-group">
+					<label for="firsttime-input" class= "font-weight-bold">First Train Time (military time)</label>
+					<input data-format=" hh:mm" type="text" class="form-control" id="firsttime-input">
+					</div>
+					<div class="form-group">
+					<label for="frequency-input" class= "font-weight-bold">Frequency (min)</label>
+					<input type="number" class="form-control" id="frequency-input">
+					</div>
+					<button type="submit" class="btn btn-primary rounded-0 " id="add-train">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+</html>
